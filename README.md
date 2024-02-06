@@ -14,15 +14,40 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+Install project dependencies with npm
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+  npm install
+```
+## Demo
 
-## Running end-to-end tests
+https://marosa-test-ecru.vercel.app/
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+# Application Roadmap
 
-## Further help
+1. **Fetch Users List from API**
+   - Make a request to the API to retrieve the list of users.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# marosa-test
+2. **Display Users in a 3-Column Table**
+   - Show users in a table organized into 3 columns for better visualization.
+   - Implement a hover effect when hovering over users for an interactive experience.
+
+3. **Detailed Information for Each User**
+   - Each user includes details such as name, last name, email, and phone number.
+   - Provide a unique image for each user.
+
+4. **Infinite Scrolling for Dynamic User Loading**
+   - Implement infinite scrolling to dynamically load additional users.
+   - Loading stops after reaching a limit of 100 users.
+   - Add a spinner to indicate ongoing user loading.
+
+5. **Custom Favicon Inclusion**
+   - Add a favicon with a robot design to enhance the visual identity of the application.
+
+6. **Media Query Implementation for Mobile Devices**
+   - Implement media queries to ensure optimal display on mobile devices.
+   - The application automatically adapts to different screen sizes for a consistent experience across all devices.
+
+
+
+
