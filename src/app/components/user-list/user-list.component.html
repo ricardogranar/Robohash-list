@@ -13,6 +13,7 @@
     <span style="--i:11">s</span>
     <span style="--i:12">t</span>
    </div>
+   <!-- <mat-spinner [color]="warn"></mat-spinner> -->
 
    <div class="scroll-table">
   <mat-table [dataSource]="userList">
@@ -43,14 +44,15 @@
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
   </mat-table>
 </div>
+
   @if(loading){
     <div class="loading">
-      <mat-spinner/>
-    <span class="no-more" If="userList.length >= 100">More Users Loading</span>
+      <p-progressSpinner styleClass="w-12px h-12px" strokeWidth="8" animationDuration=".5s"></p-progressSpinner>
+      <span class="no-more">More Users Loading</span>
     </div>
 }
 @if (userList.length >= 100){
-  <span class="no-more" If="userList.length < 100">No more users to show</span>
+  <span class="no-more">No more users to show</span>
 }
 </div>
 

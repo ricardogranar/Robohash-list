@@ -4,13 +4,13 @@ import { UserInterface } from '../../interfaces/user.interface';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { MatTableModule } from '@angular/material/table';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 
 @Component({
   selector: 'app-user-list',
   standalone: true,
-  imports: [InfiniteScrollModule, MatTooltipModule, MatTableModule, MatProgressSpinnerModule],
+  imports: [InfiniteScrollModule, MatTooltipModule, MatTableModule, ProgressSpinnerModule],
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.scss'
 })
@@ -19,6 +19,7 @@ export class UserListComponent implements OnInit{
   displayedColumns: string[] = ['name', 'email', 'phone', 'avatar'];
   userList: UserInterface []=[]
 i: any;
+warn: string|null|undefined;
   constructor(private userListService: UserListService) { }
 
   ngOnInit(): void {
