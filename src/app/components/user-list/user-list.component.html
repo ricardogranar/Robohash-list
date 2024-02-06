@@ -1,0 +1,57 @@
+<div class="infinite-scroll" infiniteScroll [infiniteScrollDistance]="2" (scrolled)="loadMoreUsers()">
+  <div class="waviy">
+    <span style="--i:1">r</span>
+    <span style="--i:2">o</span>
+    <span style="--i:3">b</span>
+    <span style="--i:4">o</span>
+    <span style="--i:5">h</span>
+    <span style="--i:6">a</span>
+    <span style="--i:7">s</span>
+    <span style="--i:8">h</span>
+    <span style="--i:9">l</span>
+    <span style="--i:10">i</span>
+    <span style="--i:11">s</span>
+    <span style="--i:12">t</span>
+   </div>
+
+   <div class="scroll-table">
+  <mat-table [dataSource]="userList">
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+      <mat-cell *matCellDef="let user">{{user.first_name}} {{user.last_name}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+      <mat-cell *matCellDef="let user">{{user.email}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="phone">
+      <mat-header-cell *matHeaderCellDef>Phone Number</mat-header-cell>
+      <mat-cell *matCellDef="let user">{{user.phone_number}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="avatar">
+      <mat-header-cell *matHeaderCellDef>Avatar</mat-header-cell>
+      <mat-cell *matCellDef="let user">
+        <img width="50" height="60" src="{{user.image}}" alt="user">
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
+  @if(loading){
+    <div class="loading">
+      <mat-spinner/>
+    <span class="no-more" If="userList.length >= 100">More Users Loading</span>
+    </div>
+}
+@if (userList.length >= 100){
+  <span class="no-more" If="userList.length < 100">No more users to show</span>
+}
+</div>
+
+
