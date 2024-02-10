@@ -13,7 +13,6 @@
     <span style="--i:11">s</span>
     <span style="--i:12">t</span>
    </div>
-   <!-- <mat-spinner [color]="warn"></mat-spinner> -->
 
    <div class="scroll-table">
   <mat-table [dataSource]="userList">
@@ -48,7 +47,7 @@
   @if(loading){
     <div class="loading">
       <p-progressSpinner styleClass="w-12px h-12px" strokeWidth="8" animationDuration=".5s"></p-progressSpinner>
-      <span class="no-more">More Users Loading</span>
+      <span class="no-more">Loading more users</span>
     </div>
 }
 @if (userList.length >= 100){

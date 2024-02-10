@@ -18,8 +18,7 @@ export class UserListComponent implements OnInit{
 
   displayedColumns: string[] = ['name', 'email', 'phone', 'avatar'];
   userList: UserInterface []=[]
-i: any;
-warn: string|null|undefined;
+  warn: string|null|undefined;
   constructor(private userListService: UserListService) { }
 
   ngOnInit(): void {
